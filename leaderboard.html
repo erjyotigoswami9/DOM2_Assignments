@@ -132,11 +132,11 @@
 </body>
 <script>
     var num = 0
-   
-        document.getElementById("min").value = Number(43)
+    var count = 0
+        document.getElementById("min").value = Number(0)
         document.getElementById("min").style.color = "black"
     
-        document.getElementById("max").value = Number(2019)
+        document.getElementById("max").value = Number(0)
         document.getElementById("max").style.color = "black"
 
 
@@ -191,6 +191,12 @@
         document.getElementById("score").value = num 
     })
     document.getElementById("enter").addEventListener('click',function(){
+        count++ 
+        if(count == 1){
+            document.getElementById("min").value = num
+            documen.getElementById("max").value = num
+        }
+        else{
         document.getElementById("score").value = num 
         if(num< Number(document.getElementById("min").value))
         {
@@ -198,6 +204,7 @@
         }
         if(num> Number(document.getElementById("max").value)){
             document.getElementById("max").value = num 
+        }
         }
         document.getElementById("score").value = ""
         num = 0
